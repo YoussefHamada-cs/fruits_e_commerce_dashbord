@@ -9,16 +9,7 @@ class AppRouter {
     initialLocation: AppRoutes.dashbord,
 
     routes: [
-      // ----------------------- Public routes (no bottom nav) -----------------------
-      // GoRoute(
-      //   path: AppRoutes.splash,
-      //   name: AppRoutes.splash,
-      //   pageBuilder: (context, state) => AppTransitions.size(
-      //     context: context,
-      //     state: state,
-      //     child: const SplashView(),
-      //   ),
-      //),
+     
       GoRoute(
         path: AppRoutes.dashbord,
         name: AppRoutes.dashbord,
