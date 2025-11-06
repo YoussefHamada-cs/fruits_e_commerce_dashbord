@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruits_hub_dashbord/core/router/app_routes.dart';
 import 'package:fruits_hub_dashbord/core/widgets/custom_button.dart';
+import 'package:go_router/go_router.dart';
 
 class DashboardViewBody extends StatelessWidget {
   const DashboardViewBody({super.key});
@@ -14,7 +16,7 @@ class DashboardViewBody extends StatelessWidget {
           child: CustomButton(
             text: 'Add data',
             onPressed: () {
-              // Handle button press
+              context.pushNamed(AppRoutes.addData);
             },
           ),
         ),
