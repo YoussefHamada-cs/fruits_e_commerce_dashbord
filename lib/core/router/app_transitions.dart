@@ -5,8 +5,9 @@ class AppTransitions {
   AppTransitions._();
 
   // Default transition duration
-  static const Duration _duration = Duration(milliseconds: 300);
-  static const Duration _reverseDuration = Duration(milliseconds: 250);
+static const Duration _duration = Duration(milliseconds: 800);
+static const Duration _reverseDuration = Duration(milliseconds: 600);
+
 
   /// Slide from right transition (iOS-style)
   static CustomTransitionPage slideFromRight({
