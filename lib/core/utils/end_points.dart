@@ -3,6 +3,7 @@ class EndPoints {
   static const String addProducts = 'addproducts';
   static const String users = 'users';
  static const String fruitsImages ='fruits_images';
+  static const String orders='orders';
 }
 class AppKeys{
   static const String url ='https://xufcvixjdqsoboaqtapz.supabase.co';

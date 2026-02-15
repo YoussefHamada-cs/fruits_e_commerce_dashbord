@@ -20,6 +20,15 @@ class DashboardViewBody extends StatelessWidget {
             },
           ),
         ),
+         Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+          child: CustomButton(
+            text: 'View Orders',
+            onPressed: () {
+              context.pushNamed(AppRoutes.viewOrders);
+            },
+          ),
+        ),
       ],
     );
   }

@@ -7,6 +7,8 @@ import 'package:fruits_hub_dashbord/core/services/data_base_service.dart';
 import 'package:fruits_hub_dashbord/core/services/fire_store_service.dart';
 import 'package:fruits_hub_dashbord/core/services/storage_service.dart';
 import 'package:fruits_hub_dashbord/core/services/supabase_storage_service.dart';
+import 'package:fruits_hub_dashbord/features/orders/data/repos/orders_repo_impl.dart';
+import 'package:fruits_hub_dashbord/features/orders/domain/repos/orders_repo.dart';
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -24,6 +26,8 @@ void setupGetIt() {
     getIt.registerSingleton<ImagesRepo>(
    ImgesRepoImpl( storageService: getIt.get<StorageService>())
   );
-   
+    getIt.registerSingleton<OrdersRepo>(
+   OrdersRepoImpl(dataBaseService:getIt.get<DataBaseService>() )
+  );
 
 }
