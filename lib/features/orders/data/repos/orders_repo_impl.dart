@@ -14,14 +14,14 @@ class OrdersRepoImpl implements OrdersRepo{
      .dataBaseService});
  
  @override
-  Future<Either<Failure,List<OrderEntity>>> getOrders()async {
+  Stream<Either<Failure,List<OrderEntity>>> getOrders()async* {
    try {
-    final data = await dataBaseService.getData(path:EndPoints.orders , );
-    List<OrderEntity> orders = (data as List).map<OrderEntity>((e) => OrderModel.fromjson(e).toEntity()).toList();
-    return Right(orders);
-
+    await for (var data in dataBaseService.streamData(path: EndPoints.orders)) {
+      List<OrderEntity> orders = (data as List).map<OrderEntity>((e) => OrderModel.fromjson(e).toEntity()).toList();
+      yield Right(orders);
+    }
    } catch (e) {
-    return Left(ServerFailure(e.toString()));
+    yield Left(ServerFailure(e.toString()));
    }
   }
  
